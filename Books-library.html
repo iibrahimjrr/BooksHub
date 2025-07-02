@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BooksHub</title>
+  <link href="assets/img/logo title.png" rel="icon">
+  <link href="assets/img/logo title.png" rel="apple-touch-icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/library-books.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="welcome.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">BooksHub</h1>
+      </a>
+      <div class="profile-icon" id="profileIcon">
+        <img src="assets/img/person/IMG_4269 (1).jpg" alt="User" id="userAvatar">
+      </div>
+    </div>
+
+
+  </header>
+    <div class="dropdown-sort-star">
+      <select id="sortDropdown">
+        <option class="option-name">Stars</option>
+        <option value="highest">⭐⭐⭐⭐⭐</option>
+        <option value="lowest">⭐⭐⭐⭐</option>
+        <option value="latest">⭐⭐⭐</option>
+        <option value="latest">⭐⭐</option>
+        <option value="latest">⭐</option>
+      </select>
+    </div>
+    <div class="dropdown-sort-rate">
+      <select id="sortDropdown">
+        <option class="option-name">Rate</option>
+        <option value="highest">Most read</option>
+        <option value="lowest">Least read</option>
+      </select>
+    </div>
+    <div class="dropdown-sort-date">
+      <select id="sortDropdown">
+        <option class="option-name">Time</option>
+        <option value="highest">Newest</option>
+        <option value="lowest">Oldest</option>
+      </select>
+    </div>
+  <div class="wrapper">
+    <div class="side">
+      <div class="bg"></div>
+      <input type="text" class="search" id="searchInput" placeholder="Search for a book..." style="position:relative; z-index:1000; background:white;" />
+      <ul class="menu" id="dayMenu">
+        <li data-day="Literary" class="selected">Literary</li>
+        <li data-day="Horrorandmystery">Horror and mystery</li>
+        <li data-day="Humandevelopment">Human development</li>
+        <li data-day="Sarcastic">Sarcastic</li>
+        <li data-day="ContemporaryEgyptian">Contemporary Egyptian</li>
+        <li data-day="policy">policy</li>
+      </ul>
+    </div>
+
+    <div class="main-wrap">
+      <div class="main">
+        <div class="list">
+          <div class="content">
+            <ul class="covers" id="bookList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Popup -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div class="book-popup" id="bookPopup">
+    <span class="close-btn" id="closePopup">
+      <span id="boot-icon" class="bi bi-x-circle-fill" style="color: rgb(36, 193, 255);"></span>
+    </span>
+    <img id="popupCover" src="" alt="Book Cover">
+    <div class="popup-info">
+      <h3 id="popupTitle"></h3>
+      <p id="popupDescription"></p>
+      <div class="popup-actions">
+        <button id="readBtn">Read</button>
+        <button id="downloadBtn">Download</button>
+        <button id="authorBtn">About the writer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/library.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+<!--created by Ibrahim Elsayed-->
+</html>

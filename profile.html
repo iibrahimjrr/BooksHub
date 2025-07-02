@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Favicons -->
+  <link href="assets/img/logo title.png" rel="icon">
+  <link href="assets/img/logo title.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>BooksHub</title>
+  <link rel="stylesheet" href="assets/css/profile.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo"><a class="logo" href="welcome.html">BooksHub</a></div>
+      <ul class="menu-list">
+        <li class="menu-item active" data-section="profile">Profile</li>
+        <li class="menu-item" data-section="feeds">Feeds</li>
+        <li class="menu-item" data-section="event">Event <span class="badge">34</span></li>
+        <li class="menu-item" data-section="charity">Charity <span class="badge">22</span></li>
+        <li class="menu-item" data-section="friends">Friends</li>
+        <li class="menu-item" data-section="community">Community</li>
+      </ul>
+      <h4>Followings</h4>
+      <ul class="followings">
+        <li class="menu-item" data-section="feeds">Tommy</li>
+        <li class="menu-item" data-section="feeds">ali</li>
+        <li class="menu-item" data-section="feeds">ahmed</li>
+        <li class="menu-item" data-section="feeds">ibrahim</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <input type="text" id="search" placeholder="Search..." />
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+      <div class="profile-card">
+        <div class="avatar-section">
+          <img class="avatar" id="avatarImg" src="" alt="avatar" />
+          <div>
+            <h2 id="nameDisplay">Name</h2>
+            <p id="usernameDisplay">@username</p>
+            <p id="emailDisplay">Email</p>
+            <p><strong>1.25k</strong> Followers · <strong>455</strong> Following</p>
+          </div>
+        </div>
+        <div class="tabs">
+          <button data-tab="events">Events</button>
+          <button data-tab="room">Room</button>
+          <button data-tab="donations">Donations</button>
+          <button data-tab="followers">Followers</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-content">
+        <p>Select a tab to show content</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>
