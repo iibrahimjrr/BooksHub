@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تعديل كتاب</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #28a745;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>تعديل كتاب</h1>
+
+  <form onsubmit="updateBook(event)">
+    <label for="title">اسم الكتاب:</label>
+    <input type="text" id="title" required>
+
+    <label for="author">اسم المؤلف:</label>
+    <input type="text" id="author" required>
+
+    <label for="pdf">رابط ملف PDF:</label>
+    <input type="url" id="pdf" required>
+
+    <label for="cover">رابط صورة الغلاف:</label>
+    <input type="url" id="cover" required>
+
+    <button type="submit">حفظ التعديلات</button>
+    <a class="back-link" href="manage-books.html">← الرجوع للكتب</a>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const bookId = Number(params.get("id"));
+    const books = JSON.parse(localStorage.getItem("books") || "[]");
+    const book = books.find(b => b.id === bookId);
+
+    if (!book) {
+      alert("الكتاب غير موجود");
+      window.location.href = "manage-books.html";
+    }
+
+    document.getElementById("title").value = book.title;
+    document.getElementById("author").value = book.author;
+    document.getElementById("pdf").value = book.pdf;
+    document.getElementById("cover").value = book.cover;
+
+    function updateBook(event) {
+      event.preventDefault();
+
+      book.title = document.getElementById("title").value.trim();
+      book.author = document.getElementById("author").value.trim();
+      book.pdf = document.getElementById("pdf").value.trim();
+      book.cover = document.getElementById("cover").value.trim();
+
+      localStorage.setItem("books", JSON.stringify(books));
+
+      alert("تم تعديل بيانات الكتاب بنجاح");
+      window.location.href = "manage-books.html";
+    }
+  </script>
+
+</body>
+</html>

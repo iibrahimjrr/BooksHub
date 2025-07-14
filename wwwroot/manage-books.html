@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>إدارة الكتب</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    img {
+      width: 60px;
+      height: auto;
+    }
+
+    .btn {
+      padding: 5px 10px;
+      margin: 2px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .btn-edit {
+      background-color: #28a745;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+    }
+
+    .btn-view {
+      background-color: #17a2b8;
+    }
+
+    .add-btn {
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>لوحة تحكم الكتب</h1>
+  <a href="add-book.html" class="add-btn">إضافة كتاب جديد</a>
+
+  <table id="booksTable">
+    <thead>
+      <tr>
+        <th>الغلاف</th>
+        <th>اسم الكتاب</th>
+        <th>المؤلف</th>
+        <th>معاينة</th>
+        <th>تعديل</th>
+        <th>حذف</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- الكتب هتضاف هنا تلقائيًا -->
+    </tbody>
+  </table>
+
+  <script>
+    const books = JSON.parse(localStorage.getItem("books") || "[]");
+
+    const tbody = document.querySelector("#booksTable tbody");
+
+    books.forEach((book, index) => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td><img src="${book.cover}" alt="غلاف"></td>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td><a class="btn btn-view" href="${book.pdf}" target="_blank">معاينة</a></td>
+        <td><a class="btn btn-edit" href="edit-book.html?id=${book.id}">تعديل</a></td>
+        <td><button class="btn btn-delete" onclick="deleteBook(${index})">حذف</button></td>
+      `;
+
+      tbody.appendChild(row);
+    });
+
+    function deleteBook(index) {
+      if (confirm("هل أنت متأكد أنك تريد حذف هذا الكتاب؟")) {
+        books.splice(index, 1);
+        localStorage.setItem("books", JSON.stringify(books));
+        location.reload();
+      }
+    }
+  </script>
+
+</body>
+</html>

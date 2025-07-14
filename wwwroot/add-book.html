@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>إضافة كتاب جديد</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      padding: 20px;
+      background: #f1f1f1;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>إضافة كتاب جديد</h1>
+
+  <form onsubmit="addBook(event)">
+    <label for="title">اسم الكتاب:</label>
+    <input type="text" id="title" required>
+
+    <label for="author">اسم المؤلف:</label>
+    <input type="text" id="author" required>
+
+    <label for="pdf">رابط ملف PDF:</label>
+    <input type="url" id="pdf" required>
+
+    <label for="cover">رابط صورة الغلاف:</label>
+    <input type="url" id="cover" required>
+
+    <button type="submit">إضافة الكتاب</button>
+    <a class="back-link" href="manage-books.html">← الرجوع للوحة التحكم</a>
+  </form>
+
+  <script>
+    function addBook(event) {
+      event.preventDefault();
+
+      const title = document.getElementById("title").value.trim();
+      const author = document.getElementById("author").value.trim();
+      const pdf = document.getElementById("pdf").value.trim();
+      const cover = document.getElementById("cover").value.trim();
+
+      const books = JSON.parse(localStorage.getItem("books") || "[]");
+
+      const newBook = {
+        id: Date.now(),
+        title,
+        author,
+        pdf,
+        cover
+      };
+
+      books.push(newBook);
+      localStorage.setItem("books", JSON.stringify(books));
+
+      alert("تم إضافة الكتاب بنجاح!");
+      window.location.href = "manage-books.html";
+    }
+  </script>
+
+</body>
+</html>
