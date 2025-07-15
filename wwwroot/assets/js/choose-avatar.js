@@ -19,7 +19,7 @@ document.getElementById("realImage").addEventListener("change", function(e) {
 function selectFakeImage(imgElement) {
   selectedFake = imgElement.src;
   realFile = null;
-  localStorage.setItem("profileImage", selectedFake); // أو evt.target.result
+  localStorage.setItem("profileImage", selectedFake); 
   previewImage(selectedFake);
   removeFakeSelection();
   imgElement.classList.add("selected");
@@ -42,5 +42,5 @@ document.getElementById("saveBtn").addEventListener("click", function() {
     alert("من فضلك اختر أو ارفع صورة أولاً");
     return;
   }
-  window.location.href = "profile.html"; // هنبعتك للصفحة الجديدة
+  window.location.href = "profile.html"; 
 });

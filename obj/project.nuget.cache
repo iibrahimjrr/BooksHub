@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "syfSYJFvIdo=",
+  "dgSpecHash": "kyIzHMS9VB4=",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
+  "projectFilePath": "c:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Metra\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Metra\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

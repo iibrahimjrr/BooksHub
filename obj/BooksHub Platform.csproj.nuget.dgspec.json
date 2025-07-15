@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj": {}
+    "c:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj": {
+    "c:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
+        "projectUniqueName": "c:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
         "projectName": "BooksHub Platform",
-        "projectPath": "C:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
+        "projectPath": "c:\\xampp\\htdocs\\BooksHub\\BooksHub Platform.csproj",
         "packagesPath": "C:\\Users\\Metra\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\BooksHub\\obj\\",
+        "outputPath": "c:\\xampp\\htdocs\\BooksHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

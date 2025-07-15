@@ -59,33 +59,38 @@
       </div>
     </div>
   </div>
+  
   <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      localStorage.setItem('email', document.getElementById('email').value);
-      localStorage.setItem('password', document.getElementById('password').value);
-      window.location.href = "profile.html";
-    });
-  </script>
-   <!-- <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const error = document.getElementById("error");
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      // بيانات افتراضية للـ Admin
-      const validEmail = "ibrahim@gmail.com";
-      const validPassword = "123";
+    const data = {
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    };
 
-      if (email === validEmail && password === validPassword) {
-        // تخزين حالة الدخول
-        localStorage.setItem("admin_logged_in", "true");
-        window.location.href = "../dashboard.html"; // وجهه بعد تسجيل الدخول
+    fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
       } else {
-        error.textContent = "انت مين يبن المتناكه";
+        return response.text().then(text => { throw new Error(text); });
       }
+    })
+    .then(result => {
+      console.log("Login success:", result);
+      window.location.href = "profile.html";
+    })
+    .catch(error => {
+      console.error("Login error:", error.message);
+      alert("Login failed: " + error.message);
     });
-  </script> -->
+  });
+</script>
+
 </body>
 

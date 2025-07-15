@@ -1,11 +1,23 @@
 window.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("avatarImg").src = localStorage.getItem("avatar") || "default-avatar.png";
-  document.getElementById("nameDisplay").textContent = localStorage.getItem("name") || "Name";
-  document.getElementById("usernameDisplay").textContent = "@" + (localStorage.getItem("username") || "username");
-  document.getElementById("emailDisplay").textContent = localStorage.getItem("email") || "Email";
+  fetch("/api/profile/me")
+    .then(res => {
+      if (!res.ok) throw new Error("Not logged in");
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById("avatarImg").src = data.profileImagePath || "assets/img/default-avatar.png";
+      document.getElementById("nameDisplay").textContent = data.name;
+      document.getElementById("usernameDisplay").textContent = "@" + data.username;
+      document.getElementById("emailDisplay").textContent = data.email;
+    })
+    .catch(err => {
+      console.error("Failed to load profile:", err);
+      alert("Please login first.");
+      window.location.href = "login.html";
+    });
 });
 
-// التنقل في القائمة الجانبية
+
 document.querySelectorAll(".menu-item").forEach(item => {
   item.addEventListener("click", () => {
     document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("active"));
@@ -14,7 +26,6 @@ document.querySelectorAll(".menu-item").forEach(item => {
   });
 });
 
-// التبويبات
 document.querySelectorAll(".tabs button").forEach(tab => {
   tab.addEventListener("click", () => {
     const content = tab.dataset.tab;
@@ -22,7 +33,6 @@ document.querySelectorAll(".tabs button").forEach(tab => {
   });
 });
 
-// البحث
 document.getElementById("search").addEventListener("input", function () {
   const query = this.value.toLowerCase();
   const name = (localStorage.getItem("name") || "").toLowerCase();
@@ -34,6 +44,6 @@ document.getElementById("search").addEventListener("input", function () {
 });
 
 document.getElementById("logoutBtn").addEventListener("click", function () {
-  localStorage.clear(); // مسح كل البيانات
-  window.location.href = "login.html"; // الرجوع لصفحة التسجيل
+  localStorage.clear(); 
+  window.location.href = "login.html"; 
 });

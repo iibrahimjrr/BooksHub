@@ -25,7 +25,7 @@ const booksData = {
     { 
       title: "Add a book",
       description: "",
-      cover: "http://127.0.0.1:5500/assets/img/logo%20bookshub.png",
+      cover: "assets/img/logo%20bookshub.png",
       readLink: "read-book.html",
       downloadLink: "download.html",
       authorPage: "author.html" 

@@ -165,9 +165,7 @@ c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\q1lb8mhh7w-98n6bxmbs9.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\hxcaseiqqq-4hi6w8uzfb.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\6h6dgo79oh-1o2e5n1kuq.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\pn2d551sgz-5ipweew5fc.gz
-c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\cot8pj8ovp-vatfinz28g.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\7xjg0lt678-nc2nk0mwen.gz
-c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\499gnqf626-e023i09952.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\izs5un1dfl-22rzz54nvz.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\li4iych3bp-jfm3rcjzyc.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\fu48tjopz4-akmhyfivmy.gz
@@ -320,3 +318,5 @@ c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\lp1tbfzzzg-5ipweew5fc.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\2v3h6bp2qj-6win851u7n.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\pqxana2dit-shqthe1luq.gz
 c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\ez0ifi3q2l-ulctqehfl3.gz
+c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\cot8pj8ovp-0u0fsm5j7u.gz
+c:\xampp\htdocs\BooksHub\obj\Debug\net9.0\compressed\499gnqf626-zvidg13zar.gz

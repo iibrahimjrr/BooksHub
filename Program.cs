@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddControllers(); // ← لإضافة API Controllers
+builder.Services.AddControllers(); 
 
 builder.Services.AddSession();
 
@@ -27,12 +27,10 @@ app.UseRouting();
 app.UseSession();         
 app.UseAuthorization();
 
-// ← ده لمسارات MVC (اختياري لو هتستخدم Razor مع API)
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Register}/{action=Index}/{id?}");
 
-// ← ده ضروري لتشغيل API زي /api/register
 app.MapControllers();
 
 app.Run();
